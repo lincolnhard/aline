@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q9</title>
+</head>
+<body>
+<p><big>很久以前做的雪人長得大概像哪個樣子</big></p>
+<img id="q1im" src="snowman1.jpg" width=200/>
+<img id="q2im" src="snowman2.jpg" width=200/>
+<img id="q3im" src="snowman3.jpg" width=200/>
+<img id="q4im" src="snowman4.jpg" width=200/><p>
+<div class="game-object">
+	<script type="text/javascript">
+		var correct_count = localStorage.getItem("storage_corret");
+		var wrong_count = localStorage.getItem("storage_wrong");
+		function answer(){
+			document.getElementById('ansim').style.visibility="visible";
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			document.getElementById('q3').disabled=true;
+			document.getElementById('q4').disabled=true;
+			document.getElementById("happyemoji").innerHTML = "😆";
+			document.getElementById("labelcorrect").innerHTML = ": " + correct_count;
+			document.getElementById("sademoji").innerHTML = "😢";
+			document.getElementById("labelwrong").innerHTML = ": " + wrong_count;
+			localStorage.setItem("storage_corret", correct_count);
+			localStorage.setItem("storage_wrong", wrong_count);
+		}
+	</script>
+
+	<button id="q1" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">雪人一</button>
+	<button id="q2" onclick="correct_count++;answer();" style="font-size:10pt;height:50px;width:200px">雪人二</button>
+	<button id="q3" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">雪人三</button>
+	<button id="q4" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">雪人四</button><p>
+ <img id="ansim" src="snowmanans.jpg" style="width:720px;visibility:hidden"/><p>
+	<label style="font-size:20pt;color:green" id="happyemoji"> </label>
+	<label style="font-size:15pt;color:green" id="labelcorrect"> </label><p>
+	<label style="font-size:20pt;color:red" id="sademoji"> </label>
+	<label style="font-size:15pt;color:red" id="labelwrong"> </label><p>
+	<button id="nextbutton" onclick="window.location.href='quiz10.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">下一題</button><p>
+</div>
+</body>
+</html> 

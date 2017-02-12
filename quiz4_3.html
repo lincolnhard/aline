@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q4-3</title>
+</head>
+<body>
+<p><big>稍晚我回來了，晚上的時候我們睡在不同房間，隔天醒來你進到我房間</big></p>
+<p><big>此時我是睡著還是醒的</big><p>
+<div class="game-object">
+	<script type="text/javascript">
+		var q4good = localStorage.getItem("storage_q4good");
+		var q4bad = localStorage.getItem("storage_qbad");
+		function answer(){
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			localStorage.setItem("storage_q4good", q4good);
+			localStorage.setItem("storage_q4bad", q4bad);
+		}
+	</script>
+
+	<button id="q1" onclick="q4good++;answer();" style="font-size:10pt;height:50px;width:200px">沉睡中</button>
+	<button id="q2" onclick="q4bad++;answer();" style="font-size:10pt;height:50px;width:200px">睡眼惺忪的醒著</button><p>
+	<button id="nextbutton" onclick="window.location.href='quiz4_4.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">繼續:4/4</button><p>
+</div>
+</body>
+</html> 

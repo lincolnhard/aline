@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q4-2</title>
+</head>
+<body>
+<p><big>到了我家了，發現我不在家，你決定把禮物放在我房間，你會放在窗邊還是床上</big></p>
+<div class="game-object">
+	<script type="text/javascript">
+		var q4good = localStorage.getItem("storage_q4good");
+		var q4bad = localStorage.getItem("storage_qbad");
+		function answer(){
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			localStorage.setItem("storage_q4good", q4good);
+			localStorage.setItem("storage_q4bad", q4bad);
+		}
+	</script>
+
+	<button id="q1" onclick="q4bad++;answer();" style="font-size:10pt;height:50px;width:200px">窗邊</button>
+	<button id="q2" onclick="q4good++;answer();" style="font-size:10pt;height:50px;width:200px">床上</button><p>
+	<button id="nextbutton" onclick="window.location.href='quiz4_3.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">繼續:3/4</button><p>
+</div>
+</body>
+</html> 

@@ -1,0 +1,168 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>林辰</title>
+</head>
+<body>
+
+<h1> Happy 28! </h1>
+
+<button onclick="window.location.href='index.html'" style="position:absolute;top:50px;right:50px;font-size:10pt;height:40px;width:100px">回首頁
+</button>
+
+<video controls autoplay id="v1" controls="controls" width="720" height="480" name="Video Name" src="scene0.0.mov">
+Your browser does not support HTML5 video.
+</video>
+
+<img id="im1" src="gameover.png" width=0 style="visibility:hidden" alt="over">
+
+<p><button id="b1" onclick="answer(this.id);" style="visibility:hidden;font-size:10pt;height:50px;width:20px"></button>
+<button id="b2" onclick="answer(this.id);" style="visibility:hidden;font-size:10pt;height:50px;width:20px"></button>
+<p><label id="lb1" style="font-size:18pt"> </label>
+
+<script type="text/javascript">
+    var v1id = document.getElementById("v1");
+    var b1id = document.getElementById("b1");
+    var b2id = document.getElementById("b2");
+    var im1id = document.getElementById("im1");
+    var lb1id = document.getElementById("lb1");
+    v1id.addEventListener('ended',end_handler,false);
+    v1id.addEventListener('timeupdate',indicated_handler,false);
+    function indicated_handler(e){
+        if(v1id.getAttribute('src') == "scene2.0.mov"){
+            if(v1id.currentTime > 71){
+                b2id.style.visibility="visible";
+                b2id.style.width = "300px";
+                b2id.innerHTML = "扶他！";
+            }
+            if(v1id.currentTime > 73){
+                b2id.style.visibility="hidden";
+                b2id.style.width = "20px";
+            }
+        }
+    }
+    function end_handler(e){
+        if(v1id.getAttribute('src') == "scene6.0.mov"){
+            v1id.width = 0;
+            v1id.height = 0;
+            im1id.style.visibility = "visible";
+            im1id.width = 720;
+            im1id.src = "voucher.png";
+            lb1id.innerHTML = "生日快樂";
+        }
+        else if(v1id.getAttribute('src') == "scene5.0.mov"){
+            v1id.src = "scene6.0.mov";
+        }
+        else if(v1id.getAttribute('src') == "scene4.1.mov"){
+            v1id.src = "scene5.0.mov";
+        }
+        else if(v1id.getAttribute('src') == "scene4.2.mov"){
+            v1id.width = 0;
+            v1id.height = 0;
+            im1id.style.visibility = "visible";
+            im1id.width = 720;
+            b2id.style.visibility="visible";
+            b2id.style.width = "300px";
+            b2id.innerHTML = "重選一次";
+        }
+        else if(v1id.getAttribute('src') == "scene4.0.mov"){
+            b1id.style.visibility="visible";
+            b2id.style.visibility="visible";
+            b1id.style.width = "300px";
+            b2id.style.width = "300px";
+            b1id.innerHTML = "籃球";
+            b2id.innerHTML = "重訓";
+        }
+        else if(v1id.getAttribute('src') == "scene3.1.mov"){
+            v1id.width = 0;
+            v1id.height = 0;
+            im1id.style.visibility = "visible";
+            im1id.width = 720;
+            b2id.style.visibility="visible";
+            b2id.style.width = "300px";
+            b2id.innerHTML = "重選一次";
+        }
+        else if(v1id.getAttribute('src') == "scene3.2.mov"){
+            v1id.src = "scene4.0.mov";
+        }
+        else if(v1id.getAttribute('src') == "scene3.0.mov"){
+            b1id.style.visibility="visible";
+            b2id.style.visibility="visible";
+            b1id.style.width = "300px";
+            b2id.style.width = "300px";
+            b1id.innerHTML = "吉他";
+            b2id.innerHTML = "饒舌";
+        }
+        else if(v1id.getAttribute('src') == "scene2.1.mov" || v1id.getAttribute('src') == "scene2.2.mov"){
+            v1id.src = "scene3.0.mov";
+        }
+        else if(v1id.getAttribute('src') == "scene2.0.mov"){
+            v1id.src = "scene2.1.mov";
+        }
+        else if(v1id.getAttribute('src') == "scene1.1.mov" || v1id.getAttribute('src') == "scene1.2.mov"){
+            v1id.src = "scene2.0.mov";
+        }
+        else if(v1id.getAttribute('src') == "scene1.0.mov"){
+            b1id.style.visibility="visible";
+            b2id.style.visibility="visible";
+            b1id.style.width = "300px";
+            b2id.style.width = "300px";
+            b1id.innerHTML = "送喝的";
+            b2id.innerHTML = "送用的";
+        }
+        else if(v1id.getAttribute('src') == "scene0.0.mov"){
+            v1id.src = "scene1.0.mov";
+        }
+    }
+    function answer(buttonid){
+        b1id.style.visibility="hidden";
+        b2id.style.visibility="hidden";
+        b1id.style.width = "20px";
+        b2id.style.width = "20px";
+        if(buttonid == "b1"){
+            if(v1id.getAttribute('src') == "scene4.0.mov"){
+                v1id.src = "scene4.1.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene3.0.mov"){
+                v1id.src = "scene3.1.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene1.0.mov"){
+                v1id.src = "scene1.1.mov";
+            }
+        }
+        else if(buttonid == "b2"){
+            if(v1id.getAttribute('src') == "scene4.2.mov"){
+                im1id.style.visibility = "hidden";
+                im1id.width = 0;
+                v1id.width = 720;
+                v1id.height = 480;
+                v1id.src = "scene4.0.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene4.0.mov"){
+                v1id.src = "scene4.2.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene3.1.mov"){
+                im1id.style.visibility = "hidden";
+                im1id.width = 0;
+                v1id.width = 720;
+                v1id.height = 480;
+                v1id.src = "scene3.0.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene3.0.mov"){
+                v1id.src = "scene3.2.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene2.0.mov"){
+                v1id.src = "scene2.2.mov";
+            }
+            else if(v1id.getAttribute('src') == "scene1.0.mov"){
+                v1id.src = "scene1.2.mov";
+            }
+        }
+    }
+</script>
+
+
+</body>
+
+</html>

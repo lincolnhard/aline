@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q4-4</title>
+</head>
+<body>
+<p><big>你要回去了</big></p>
+<p><big>這次你會選擇快的路還是慢的路</big><p>
+<div class="game-object">
+	<script type="text/javascript">
+		var q4good = localStorage.getItem("storage_q4good");
+		var q4bad = localStorage.getItem("storage_qbad");
+		var correct_count = localStorage.getItem("storage_corret");
+		var wrong_count = localStorage.getItem("storage_wrong");
+		function answer(){
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			if(q4good > q4bad){
+				correct_count++;	
+			}
+			else{
+				wrong_count++
+			}
+			document.getElementById("happyemoji").innerHTML = "😆";
+			document.getElementById("labelcorrect").innerHTML = ": " + correct_count;
+			document.getElementById("sademoji").innerHTML = "😢";
+			document.getElementById("labelwrong").innerHTML = ": " + wrong_count;
+			localStorage.setItem("storage_corret", correct_count);
+			localStorage.setItem("storage_wrong", wrong_count);
+		}
+	</script>
+
+	<button id="q1" onclick="q4bad++;answer();" style="font-size:10pt;height:50px;width:200px">快，但無聊</button>
+	<button id="q2" onclick="q4good++;answer();" style="font-size:10pt;height:50px;width:200px">慢，但有趣</button><p>
+	<label style="font-size:20pt;color:green" id="happyemoji"> </label>
+	<label style="font-size:15pt;color:green" id="labelcorrect"> </label><p>
+	<label style="font-size:20pt;color:red" id="sademoji"> </label>
+	<label style="font-size:15pt;color:red" id="labelwrong"> </label><p>	
+	<button id="nextbutton" onclick="window.location.href='quiz5.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">下一題</button><p>
+</div>
+</body>
+</html> 

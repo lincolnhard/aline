@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q19</title>
+</head>
+<body>
+<p><big>東遊記裡面至尊寶跟紫霞告白什麼</big></p>
+<img id="blackim" src="stephen.jpg" width=500><p>
+<p><big>A. 想不到一段真正的感情最後竟然成為別人斂財的工具，這次我真的怕了</big></p>
+<p><big>B. 這是一段上天安排的感情，我也沒辦法，上天最大嘛</big></p>
+<p><big>C. 喜歡一個人需要理由嗎？需要嗎？不需要嗎？需要嗎？</big></p>
+<p><big>D. 曾經有一段真摯的愛情擺在我眼前，我沒有去珍惜，等到失去了才後悔莫及，塵世間最痛苦的事莫過於此，如果上天能給我一個再來一次的機會，我希望能對那個女孩說我愛你，如果非要給這愛加一個期限的話，我希望是一萬年。</big></p>
+<div class="game-object">
+	<script type="text/javascript">
+		var correct_count = localStorage.getItem("storage_corret");
+		var wrong_count = localStorage.getItem("storage_wrong");
+		function answer(){
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			document.getElementById('q3').disabled=true;
+			document.getElementById('q4').disabled=true;
+			document.getElementById("happyemoji").innerHTML = "😆";
+			document.getElementById("labelcorrect").innerHTML = ": " + correct_count;
+			document.getElementById("sademoji").innerHTML = "😢";
+			document.getElementById("labelwrong").innerHTML = ": " + wrong_count;
+			localStorage.setItem("storage_corret", correct_count);
+			localStorage.setItem("storage_wrong", wrong_count);
+		}
+	</script>
+
+	<button id="q1" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">A</button>
+	<button id="q2" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">B</button>
+	<button id="q3" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">C</button>
+	<button id="q4" onclick="correct_count++;answer();" style="font-size:10pt;height:50px;width:200px">D</button><p>
+	<label style="font-size:20pt;color:green" id="happyemoji"> </label>
+	<label style="font-size:15pt;color:green" id="labelcorrect"> </label><p>
+	<label style="font-size:20pt;color:red" id="sademoji"> </label>
+	<label style="font-size:15pt;color:red" id="labelwrong"> </label><p>
+	<button id="nextbutton" onclick="window.location.href='result.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">結束</button><p>
+</div>
+</body>
+</html> 

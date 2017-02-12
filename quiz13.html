@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q13</title>
+</head>
+<body>
+<p><big>這張照片的背後故事</big></p>
+<img id="blackim" src="catface.jpg" width=300><p>
+<p><big>A. 認真的在想我的謎語（哇沙比走在路上為什麼被打）</big></p>
+<p><big>B. 等喝咖啡時扮貓臉</big></p>
+<p><big>C. 吃飯前玩不能笑遊戲</big></p>
+<p><big>D. 聽我講扁案聽到放空</big></p>
+<div class="game-object">
+	<script type="text/javascript">
+		var correct_count = localStorage.getItem("storage_corret");
+		var wrong_count = localStorage.getItem("storage_wrong");
+		function answer(){
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			document.getElementById('q3').disabled=true;
+			document.getElementById('q4').disabled=true;
+			document.getElementById("happyemoji").innerHTML = "😆";
+			document.getElementById("labelcorrect").innerHTML = ": " + correct_count;
+			document.getElementById("sademoji").innerHTML = "😢";
+			document.getElementById("labelwrong").innerHTML = ": " + wrong_count;
+			localStorage.setItem("storage_corret", correct_count);
+			localStorage.setItem("storage_wrong", wrong_count);
+		}
+	</script>
+
+	<button id="q1" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">A</button>
+	<button id="q2" onclick="correct_count++;answer();" style="font-size:10pt;height:50px;width:200px">B</button>
+	<button id="q3" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">C</button>
+	<button id="q4" onclick="wrong_count++;answer();" style="font-size:10pt;height:50px;width:200px">D</button><p>
+	<label style="font-size:20pt;color:green" id="happyemoji"> </label>
+	<label style="font-size:15pt;color:green" id="labelcorrect"> </label><p>
+	<label style="font-size:20pt;color:red" id="sademoji"> </label>
+	<label style="font-size:15pt;color:red" id="labelwrong"> </label><p>
+	<button id="nextbutton" onclick="window.location.href='quiz14.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">下一題</button><p>
+</div>
+</body>
+</html> 

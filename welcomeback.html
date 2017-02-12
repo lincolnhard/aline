@@ -1,0 +1,216 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>林辰</title>
+<link rel="icon" href="aline.ico">
+</head>
+<body>
+
+<h1>Welcome home Aline</h1>
+<img src="aline_euro.jpg" alt="aline euro" width="750" height="540">
+<p><big>經過了</big>
+
+<SCRIPT type="text/javascript">
+
+function setcountup(theyear,themonth,theday){
+yr=theyear;mo=themonth;da=theday
+}
+
+//////////CONFIGURE THE COUNTUP SCRIPT HERE//////////////////
+
+//STEP 1: Configure the date to count up from, in the format year, month, day:
+//This date should be less than today
+setcountup(2015,10,01)
+
+//STEP 2: Configure text to be attached to count up
+var displaymessage="have passed since my last cigarette!"
+
+//STEP 3: Configure the below 5 variables to set the width, height, background color, and text style of the countup area
+var countupwidth='350px'
+var countupheight='35px'
+var countupbgcolor='lightblue'
+var opentags='<big>'
+var closetags='</big>'
+
+//////////DO NOT EDIT PASS THIS LINE//////////////////
+
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+var crosscount=''
+
+function start_countup(){
+if (document.layers)
+document.countupnsmain.visibility="show"
+else if (document.all||document.getElementById)
+crosscount=document.getElementById&&!document.all?document.getElementById("countupie") : countupie
+countup()
+}
+
+if (document.all||document.getElementById)
+document.write('<span id="countupie" style="width:'+countupwidth+'; background-color:'+countupbgcolor+'"></span>')
+
+window.onload=start_countup
+
+
+function countup(){
+var today=new Date()
+var todayy=today.getYear()
+if (todayy < 1000)
+todayy+=1900
+var todaym=today.getMonth()
+var todayd=today.getDate()
+var todayh=today.getHours()
+var todaymin=today.getMinutes()
+var todaysec=today.getSeconds()
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+paststring=montharray[mo-1]+" "+da+", "+yr
+dd=Date.parse(todaystring)-Date.parse(paststring)
+dday=Math.floor(dd/(60*60*1000*24)*1)
+dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+
+if (document.layers){
+document.countupnsmain.document.countupnssub.document.write(opentags+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec+" seconds "+closetags)
+document.countupnsmain.document.countupnssub.document.close()
+}
+else if (document.all||document.getElementById)
+crosscount.innerHTML=opentags+dday+ " 天, "+dhour+" 小時, "+dmin+" 分, 和 "+dsec+" 秒 "+closetags
+
+setTimeout("countup()",1000)
+}
+</SCRIPT>
+
+<ilayer id="countupnsmain" width=&{countupwidth}; height=&{countupheight}; bgColor=&{countupbgcolor}; visibility=hide><layer id="countupnssub" width=&{countupwidth}; height=&{countupheight}; left=0 top=0></layer></ilayer>
+
+<p><big>飛行了 9704 公里</big></p>
+
+<div id="map" style="width:75%;height:400px"></div>
+<script>
+var map;
+var loc1;
+var loc2;
+
+function initialize() {
+
+    loc1 = new google.maps.LatLng(50.8503, 4.3517);
+    loc2 = new google.maps.LatLng(25.105497, 121.597366);
+
+    var myOptions = {
+      zoom: 10,
+      center: loc1,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false
+    }
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+var latlngbounds = new google.maps.LatLngBounds();
+
+var marker1 = new google.maps.Marker({
+        position: loc1,
+        map: map,
+        title:'Belgium',
+        html:'Brussel, Belgium',
+        zIndex: 0
+    });
+var marker2 = new google.maps.Marker({
+        position: loc2,
+        map: map,
+        title:'Taiwan',
+        html:'Taipei, Taiwan',
+        zIndex: 1
+    });
+
+var infowindow = new google.maps.InfoWindow();
+latlngbounds.extend(loc1);
+latlngbounds.extend(loc2);
+map.fitBounds(latlngbounds);
+
+google.maps.event.addListener(marker1, 'click', function() {
+infowindow.setContent(this.html);
+infowindow.open(map, marker1);
+});
+google.maps.event.addListener(marker2, 'click', function() {
+infowindow.setContent(this.html);
+infowindow.open(map, marker2);
+});
+
+var pCoordinates = [loc1,loc2];
+var path1 = new google.maps.Polyline({
+      path: pCoordinates,
+      strokeColor: "#FF0000",
+      strokeOpacity: .5,
+	  geodesic: true,
+      strokeWeight: 3
+    });
+path1.setMap(map);
+var path2 = new google.maps.Polyline({
+      path: pCoordinates,
+      strokeColor: "#000000",
+      strokeOpacity: .5,
+      strokeWeight: 3
+});
+path2.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxwWCzIVCeyBN_Nuae24l04epgpheF918&callback=initialize"></script>
+
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<p><big>.</big></p>
+<h1><br>you came back！!!!!!!!!!!!!!!!!!!<br><br></h1>
+<p><big>你回來了</big></p>
+<p><big>有開心嗎</big></p>
+<p><big>還是有點不捨勒<br><br></big></p>
+<HR>
+<p><big><br><br>幫你回顧一下</big><p>
+<img src="dog_years_small.jpg" alt="year review" width="320" height="392">
+<p><big>這一年你似乎遇上了許多麻煩</big></p>
+<p><big>等了很久的工作證</big><p>
+<p><big>租到了沒有wifi的房子</big><p>
+<p><big>幫人按摩維生按到手抽筋</big><p>
+<p><big>自己煮飯</big><p>
+<p><big>每天掉頭皮屑</big><p>
+<p><big>碰到宵禁</big><p>
+<p><big>碰到過恐怖攻擊</big><p>
+<p><big>手機壞掉</big><p>
+<p><big>按時當親戚朋友的導遊</big><p>
+<p><big>看電影買到0趴啤酒</big><p>
+
+<p><big><br>看似不輕鬆的日子</big><p>
+<p><big>透過社群媒體就變成了一種體驗</big><p>
+<p><big>早上上班</big><p>
+<p><big>有時會看到你的新照片</big><p>
+<p><big>配著早餐 看照片 想像你的生活</big><p>
+
+<p><big><br>你的夢想由真實的人事物構成</big></p>
+<p><big>就像你硬碟裡的許多照片 你希望有個完美的人生</big></p>
+<p><big>我不知道你未來的人生裡 會不會有我的存在</big></p>
+<p><big>我知道你不會想太多 因為你總是順著自己的心 是活在當下的人</big></p>
+<img src="live_the_moment.jpg" alt="moment" width="480" height="480">
+
+<p><big>所以<br><br><br><br>我替你想好了</big></p>
+<p><big>透過一些測驗 了解我們 </big></p>
+<p><big>你準備好了嗎</big></p>
+
+
+<button onclick="window.location.href='quiz1.html'" style="font-size:20pt;height:100px;width:200px">我準備好了</button>
+<button onclick="window.location.href='let_me_think_about_it.html'" style="font-size:20pt;height:100px;width:200px">讓我想一想</button>
+
+<!--
+<input type="button" value="文字";onclick="window.location.href='Distance from Belgium to Taiwan.html'";" style="font-size:20pt; width:100px;height:60px;color:#000000">
+
+//-->
+</body>
+
+
+
+</html> 

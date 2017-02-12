@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Q4-1</title>
+</head>
+<body>
+<p><big>你在來我家找我的路上要帶禮物給我，發現有兩條路可以走，一條可以快速到達但路上很無聊，一條要繞遠路但路上有很漂亮的風景跟有趣的事</big></p>
+<p><big>你會選擇哪一條路</big><p>
+<div class="game-object">
+	<script type="text/javascript">
+		var q4good = 0;
+		var q4bad = 0;
+		function answer(){
+			document.getElementById('nextbutton').style.visibility="visible";
+			document.getElementById('q1').disabled=true;
+			document.getElementById('q2').disabled=true;
+			localStorage.setItem("storage_q4good", q4good);
+			localStorage.setItem("storage_q4bad", q4bad);
+		}
+	</script>
+
+	<button id="q1" onclick="q4good++;answer();" style="font-size:10pt;height:50px;width:200px">快，但無聊</button>
+	<button id="q2" onclick="q4bad++;answer();" style="font-size:10pt;height:50px;width:200px">慢，但有趣</button><p>
+	<button id="nextbutton" onclick="window.location.href='quiz4_2.html'" style="visibility:hidden;font-size:10pt;height:50px;width:100px">繼續:2/4</button><p>
+</div>
+</body>
+</html> 

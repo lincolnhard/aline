@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>分析結果</title>
+</head>
+<body onload="answer()">
+<h1>結論</h1>
+<div class="game-object">
+	<script type="text/javascript">
+		function answer(){
+            var correct_count = localStorage.getItem("storage_corret");
+            var wrong_count = localStorage.getItem("storage_wrong");
+			if(Number(correct_count) > Number(wrong_count)){
+				document.getElementById("labelresult1").innerHTML = "正面的結果";
+				document.getElementById("labelresult2").innerHTML = "正面的結果";
+				document.getElementById("labelresult3").innerHTML = "正面的結果";
+				document.getElementById('goodim').style.visibility="visible";
+				document.getElementById('goodim').width=300;
+				document.getElementById("labelresult11").innerHTML = "無論如何我們該見個面";
+				document.getElementById("labelresult12").innerHTML = "請妳勾選可行的時間 ";
+				document.getElementById("labelresult13").innerHTML = "no pressure";
+			}
+			else{
+				document.getElementById('badim').style.visibility="visible";
+				document.getElementById('badim').width=300;
+				document.getElementById("labelresult1").innerHTML = "結果似乎不是很好，可能跟我想像的不太一樣，不過至少我做得很高興。";
+				document.getElementById("labelresult2").innerHTML = "看你的照片，用你的照片做作業很開心";
+				document.getElementById("labelresult3").innerHTML = "因為都是快樂的片段"
+				document.getElementById("labelresult4").innerHTML = "你永遠會是我心中的女神。有年紀可以跟小孩子說我也有一段特別的感情阿，對方是世界第一，一生一世最好的對象";
+				document.getElementById("labelresult5").innerHTML = "曾經被朋友問過我要憑什麼讓你回來？我說我對妳很好，他說單對一個人好是沒有用的，大家都可以對妳很好，當妳條件很好的時候，大家都會對妳很好 ";
+				document.getElementById("labelresult6").innerHTML = "人說小事成就大事";
+				document.getElementById("labelresult7").innerHTML = "對你好是一件小事，但是我願意一直持續，有一天他或許可以累積成一個對妳來說很重要的大事";
+				document.getElementById("labelresult8").innerHTML = "去年妳不在的時候 我家下雪了";
+				document.getElementById("labelresult9").innerHTML = "看著雪花緩緩的落下 我想如果妳在場就好了";
+				document.getElementById("labelresult10").innerHTML = "仔細觀察雪花的內部，真的是冰晶的形狀。我想拍下來，但是他兩三秒就融化了";
+				document.getElementById("labelresult11").innerHTML = "我在想妳是不是也做過一樣的事情";
+				document.getElementById("labelresult12").innerHTML = "妳常常是許多問題的答案  為什麼我們在這裡 我們該去哪裡 為什麼這麼困難";
+				document.getElementById("labelresult13").innerHTML = "也許妳變了 不一樣了 人是會變的 我也變了";
+				document.getElementById("labelresult14").innerHTML = "我也懂的";
+				document.getElementById("labelresult15").innerHTML = "我很愛電影十面埋伏裡面的金城武 他說風就是風，風不會停，風不多想";
+				document.getElementById("labelresult16").innerHTML = "我常常把妳套在他身上，想像著妳過著風一般的日子 每天都是這麼開心";
+				document.getElementById("labelresult17").innerHTML = "這些羅曼蒂克的想法";
+				document.getElementById("labelresult18").innerHTML = "不能代表我只愛想像中的妳";
+				document.getElementById("labelresult19").innerHTML = "我想愛真實的妳 在真實的生老病死中陪在妳身邊";
+				document.getElementById("labelresult20").innerHTML = "希望這些不會給妳壓力";
+				document.getElementById("labelresult21").innerHTML = "請與我見一面";
+				document.getElementById("labelresult22").innerHTML = "勾選妳可行的時間";
+				document.getElementById("labelresult23").innerHTML = "no pressure";
+			}
+		}
+		function submit(){
+			if(document.getElementById("d1").checked == true){
+			
+			}		
+		}
+	</script>
+	<img id="goodim" src="mecry.jpg" width=0 style="visibility:hidden"/><p>
+	<label id="labelresult1"> </label><p>
+	<label id="labelresult2"> </label><p>
+	<label id="labelresult3"> </label><p>
+	<img id="badim" src="aline_result.png" width=0 style="visibility:hidden" alt="aline monalisa" width="320"><p>
+	<label id="labelresult4"> </label><p>
+	<label id="labelresult5"> </label><p>
+	<label id="labelresult6"> </label><p>
+	<label id="labelresult7"> </label><p>
+	<label id="labelresult8"> </label><p>
+	<label id="labelresult9"> </label><p>
+	<label id="labelresult10"> </label><p>
+	<label id="labelresult11"> </label><p>
+	<label id="labelresult12"> </label><p>
+	<label id="labelresult13"> </label><p>
+	<label id="labelresult14"> </label><p>
+	<label id="labelresult15"> </label><p>
+	<label id="labelresult16"> </label><p>
+	<label id="labelresult17"> </label><p>
+	<label id="labelresult18"> </label><p>
+	<label id="labelresult19"> </label><p>
+	<label id="labelresult20"> </label><p>
+	<label id="labelresult21"> </label><p>
+	<label id="labelresult22"> </label><p>
+	<label id="labelresult23"> </label><p>
+	<input type="checkbox" id="d1"> 12/3
+	<input type="checkbox" id="d2"> 12/4
+	<input type="checkbox" id="d3"> 12/23
+	<input type="checkbox" id="d4"> 12/24
+	<input type="checkbox" id="d5"> 12/25<br><br>
+	<button id="nextbutton" onclick="window.location.href='end.html'" style="font-size:10pt;height:50px;width:100px">遞交</button><p>
+</div>
+</body>
+</html> 
